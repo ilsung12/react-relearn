@@ -47,3 +47,7 @@
   background-size: cover;
   color: white;
 }
+
+button {
+  margin: 2px;
+}
