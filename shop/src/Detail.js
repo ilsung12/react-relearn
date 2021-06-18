@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
+import "./Detail.scss";
 
 let Box = styled.div`
   padding-top: 30px;
@@ -16,6 +17,14 @@ function Detail(props) {
   let history = useHistory();
   let findProduct = props.shoes.find((x) => x.id == id);
 
+  let [alert, setAlert] = useState(true);
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setAlert(false);
+    }, 2000);
+  });
+
   return (
     <div className="container">
       <div className="row">
@@ -23,6 +32,13 @@ function Detail(props) {
           <Box>
             <Title1>Detail</Title1>
           </Box>
+
+          {alert === true ? (
+            <div className="my-alert-yellow">
+              <p>재고가 얼마 남지 않았습니다.</p>
+            </div>
+          ) : null}
+
           <img
             src={
               "https://codingapple1.github.io/shop/shoes" +

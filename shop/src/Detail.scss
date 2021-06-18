@@ -1,0 +1,22 @@
+/* 함수 만드는이유 = 축약 */
+@mixin 함수() {
+  background-color: #eeeeee;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.my-alert {
+  @include 함수();
+}
+
+.my-alert p {
+  margin-bottom: 0;
+}
+
+.my-alert-yellow {
+  @extend .my-alert;
+  background: #ffe591;
+}
