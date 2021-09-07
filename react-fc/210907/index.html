@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const App = () => {
+        const [keyword, setKeyword] = React.useState("");
+        const [result, setResult] = React.useState("");
+        const [typing, setTyping] = React.useState(false);
+        
+        // useState 는 아래의 의미와 같다
+        // const keyState = React.useState("");
+        // const key = keyState[0]; // 상태값
+        // const setKey = keyState[1]; // 업데이트값
+
+        const handleChange = (e) => {
+          setKeyword(e.target.value);
+          setTyping(true);
+        };
+        const handleClick = () => {
+          setTyping(false);
+          setResult(`We find results of ${keyword}`);
+        };
+
+        return (
+          <>
+            <input onChange={handleChange} />
+            <button onClick={handleClick}>search</button>
+            <p>{typing ? `looking for ${keyword}...` : result}</p>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>
