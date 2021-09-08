@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const App = () => {
+        const handleSubmit = (e) => {
+          e.preventDefault(); // 기본적인 동작을 하지마라.
+
+          console.dir(e.target.elements);
+          // alert(
+          //   `FirstName: ${e.target[0].value}, LastName ${e.target[1].value}`
+          // );
+          alert(
+            `FirstName: ${e.target.elements.fname.value}, LastName ${e.target.elements.lname.value}`
+          );
+        };
+
+        return (
+          <>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="fname">First name:</label>
+              <br />
+              <input type="text" id="fname" name="fname" defaultValue="John" />
+              <br />
+              <label htmlFor="lname">Last name:</label>
+              <br />
+              <input type="text" id="lname" name="lname" defaultValue="Doe" />
+              <br />
+              <br />
+              <input type="submit" defaultValue="Submit" />
+            </form>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>
