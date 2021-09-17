@@ -12,14 +12,20 @@
 //import Condition from './components/2-8.ConditionalRendering/Condition';
 //import List from './components/2-9.List/List';
 import "./App.css";
-import Dialog from "./components/3-6.Composition2/Dialog";
-import ThankyouDialog from "./components/3-6.Composition2/ThankyouDialog";
+//import Dialog from "./components/3-6.Composition2/Dialog";
+//import ThankyouDialog from "./components/3-6.Composition2/ThankyouDialog";
+import Button from "./components/3-7.HOC/Button";
+import Input from "./components/3-7.HOC/Input";
 
 function App() {
   return (
     <div className="App">
+      <Input />
+      <br />
+      <br />
+      <Button />
       {/* <Dialog /> */}
-      <ThankyouDialog />
+      {/* <ThankyouDialog /> */}
 
       {/* <WelcomeDialog /> */}
       {/* <State />
