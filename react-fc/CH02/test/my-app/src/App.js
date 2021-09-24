@@ -13,21 +13,21 @@
 //import List from './components/2-9.List/List';
 import "./App.css";
 //import Component from "./components/3-14.PropTypes/Componentpr";
-import Component from "./components/3-14.PropTypes/Component";
+//import Component from "./components/3-14.PropTypes/Component";
 //import Dialog from "./components/3-6.Composition2/Dialog";
 //import ThankyouDialog from "./components/3-6.Composition2/ThankyouDialog";
 //import Button from './components/3-7.HOC/Button';
 //import Input from './components/3-7.HOC/Input';
-//import Memo from './components/3-8.Memoization/Memo';
+import Memo from './components/3-8.Memoization/Memo';
 //import Example from './components/3-10.Context/Example'
 //import Example from './components/3-11.Portals/Example';
 
 function App() {
   return (
     <div className="App">
-      <Component />
+      {/* <Component /> */}
       {/* <Example /> */}
-      {/* <Memo /> */}
+      <Memo />
       {/* <Input />
       <br />
       <br />

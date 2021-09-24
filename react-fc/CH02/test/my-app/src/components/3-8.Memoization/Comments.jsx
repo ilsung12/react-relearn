@@ -2,9 +2,14 @@ import React, { useCallback } from 'react';
 import CommentItem from './CommentItem';
 
 export default function Comments({ commentList }) {
-  const handleChange = useCallback(() => {
+  // const handleChange = useCallback(() => {
+  //   console.log('handle');
+  // }, []);
+
+  // useCallback이 아닐 때,
+  const handleChange = () => {
     console.log('handle');
-  }, []);
+  };
 
   return (
     <div>
