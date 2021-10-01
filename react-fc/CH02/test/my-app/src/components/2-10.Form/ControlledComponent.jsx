@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function ControlledComponent() {
-  const [name, setName] = useState('');
-  const [flavor, setFlavor] = useState('coconut');
+  const [name, setName] = useState("");
+  const [flavor, setFlavor] = useState("coconut");
   const [essay, setEssay] = useState(
-    'Please write an essay about your favorite DOM element.'
+    "Please write an essay about your favorite DOM element."
   );
   function handleChange(event) {
     const name = event.target.name; // name을 활용해서 다중 입력 제어하기
     const type = event.target.type; // type 도 가능
-    if (type === 'text') {
+    if (type === "text") {
       setName(event.target.value);
     }
-    if (name === 'essay') {
+    if (name === "essay") {
       setEssay(event.target.value);
     }
-    if (name === 'flavor') {
+    if (name === "flavor") {
       setFlavor(event.target.value);
     }
   }
